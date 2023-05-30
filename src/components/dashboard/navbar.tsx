@@ -22,6 +22,7 @@ import {
   InboxArrowDownIcon,
   LifebuoyIcon,
   PowerIcon,
+  RocketLaunchIcon,
   Bars2Icon,
 } from "@heroicons/react/24/outline";
  
@@ -112,56 +113,19 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "404",
-    href: "/astro-ecommerce/404"
+    title: "@material-tailwind/html",
+    description:
+      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
   },
   {
-    title: "About Us",
-    href: "/astro-ecommerce/about"
+    title: "@material-tailwind/react",
+    description:
+      "Learn how to use @material-tailwind/react, packed with rich components for React.",
   },
   {
-    title: "Landing Page",
-    href: "/astro-ecommerce/landing"
-  },
-  {
-    title: "Billing Page",
-    href: "/astro-ecommerce/billing"
-  },
-  {
-    title: "Blog Page",
-    href: "/astro-ecommerce/blog"
-  },
-  {
-    title: "Our Team",
-    href: "/astro-ecommerce/teams"
-  },
-  {
-    title: "Blog Post",
-    href: "/astro-ecommerce/blog-post"
-  },
-  {
-    title: "Comming Soon",
-    href: "/astro-ecommerce/commin-soon"
-  },
-  {
-    title: "Dashboard",
-    href: "/astro-ecommerce/dashboard"
-  },
-  {
-    title: "Login",
-    href: "/astro-ecommerce/login"
-  },
-  {
-    title: "Reset",
-    href: "/astro-ecommerce/reset"
-  },
-  {
-    title: "Sign Up",
-    href: "/astro-ecommerce/signup"
-  },
-  {
-    title: "Terms",
-    href: "/astro-ecommerce/terms"
+    title: "Material Tailwind PRO",
+    description:
+      "A complete set of UI Elements for building faster websites in less time.",
   },
 ];
  
@@ -173,11 +137,14 @@ function NavListMenu() {
     onMouseLeave: () => setIsMenuOpen(false),
   };
  
-  const renderItems = navListMenuItems.map(({ title, href }) => (
-    <a href={href} key={title}>
+  const renderItems = navListMenuItems.map(({ title, description }) => (
+    <a href="#" key={title}>
       <MenuItem>
-        <Typography variant="p" color="blue-gray" className="mb-1 font-normal">
+        <Typography variant="h6" color="blue-gray" className="mb-1">
           {title}
+        </Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          {description}
         </Typography>
       </MenuItem>
     </a>
@@ -204,9 +171,17 @@ function NavListMenu() {
         </MenuHandler>
         <MenuList
           {...triggers}
-          className="hidden grid-cols-7 gap-3 overflow-visible lg:grid"
+          className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <ul className="col-span-12 flex w-full flex-col gap-1">
+          <Card
+            color="blue"
+            shadow={false}
+            variant="gradient"
+            className="col-span-3 grid h-full w-full place-items-center rounded-md"
+          >
+            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+          </Card>
+          <ul className="col-span-4 flex w-full flex-col gap-1">
             {renderItems}
           </ul>
         </MenuList>
@@ -272,14 +247,14 @@ export default function ComplexNavbar() {
   }, []);
  
   return (
-    <Navbar className="mx-auto max-w-screen-2xl p-2 lg:rounded-full lg:pl-6 mt-4">
+    <Navbar className="w-full max-w-screen-3xl p-2 lg:pl-6">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
         >
-          Astro Ecommerce
+          Dashboard
         </Typography>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />

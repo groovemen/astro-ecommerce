@@ -1,24 +1,22 @@
 import ThemeProvider from "../theme-provider";
-import Navbar from "../defaultNavbar"
 
 import {
   Button,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
 export function HeroSectionFour() {
   return (
     <ThemeProvider>
-      <Navbar />
-      <header className="h-screen min-h-screen w-screen bg-white">
-        <div className="relative h-screen flex align-center flex-col justify-center text-center bg-cover" style={{backgroundImage: `url('https://images.unsplash.com/photo-1650692201357-3b1b15469952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80')`}}>
+      <header className="container mx-auto rounded-2xl overflow-hidden">
+        <div className="relative h-full flex align-center flex-col justify-center text-center bg-cover py-24" style={{backgroundImage: `url('https://images.unsplash.com/photo-1680000827819-c4bb72ed594d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1864&q=80')`}}>
           <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800"></span>
           <Typography
             variant="h1"
             color="white"
             className="mb-4 !leading-tight lg:text-7xl z-20"
           >
-            Error 404
+            iPhone
           </Typography>
           <Typography
             variant="lead"
@@ -30,8 +28,8 @@ export function HeroSectionFour() {
           </Typography>
           <div className="w-auto mx-auto">
             <div className="flex items-center">
-              <Button color="white" className="w-full px-4 z-10">
-                Go Home
+              <Button size="lg" color="white" className="w-full px-4 z-10">
+                Show new arrivals
               </Button>
             </div>
           </div>
