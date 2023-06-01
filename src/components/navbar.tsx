@@ -116,6 +116,10 @@ const navListMenuItems = [
     href: "/404"
   },
   {
+    title: "500",
+    href: "/500"
+  },
+  {
     title: "About Us",
     href: "/about"
   },
@@ -141,7 +145,7 @@ const navListMenuItems = [
   },
   {
     title: "Comming Soon",
-    href: "/commin-soon"
+    href: "/comming-soon"
   },
   {
     title: "Dashboard",
