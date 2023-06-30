@@ -24,7 +24,7 @@ function PricingCard({ title, desc, price, plan, options, marked }) {
               {marked && (
                 <Chip
                   value="popular"
-                  className="!rounded-full !py-1.5 !px-3"
+                  className="!py-1.5 !px-3 bg-dark"
                 />
               )}
             </Typography>
@@ -86,7 +86,7 @@ export function PricingSectionTwo() {
         <Typography variant="h2" className="text-4xl mb-4">
           Choose a plan for your next project
         </Typography>
-        <Typography variant="p" className="text-lg">
+        <Typography variant="paragraph" className="text-lg">
           You have Free Unlimited Updates and Premium Support on each package. You also have 20 days to request a refund.
         </Typography>
       </div>
