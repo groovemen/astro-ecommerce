@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Navbar,
-  Collapse,
+  MobileNav,
   Typography,
   Button,
   Menu,
@@ -22,6 +22,7 @@ import {
   InboxArrowDownIcon,
   LifebuoyIcon,
   PowerIcon,
+  RocketLaunchIcon,
   Bars2Icon,
 } from "@heroicons/react/24/outline";
  
@@ -65,8 +66,8 @@ function ProfileMenu() {
             variant="circular"
             size="sm"
             alt="candice wu"
-            className="border border-blue-500 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            className="border border-dark p-0.5"
+            src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=986&q=80"
           />
           <ChevronDownIcon
             strokeWidth={2.5}
@@ -111,14 +112,6 @@ function ProfileMenu() {
  
 // nav list menu
 const navListMenuItems = [
-  {
-    title: "404",
-    href: "/404"
-  },
-  {
-    title: "500",
-    href: "/500"
-  },
   {
     title: "About Us",
     href: "/about"
@@ -167,6 +160,14 @@ const navListMenuItems = [
     title: "Terms",
     href: "/terms"
   },
+  {
+    title: "404",
+    href: "/404"
+  },
+  {
+    title: "500",
+    href: "/500"
+  },
 ];
  
 function NavListMenu() {
@@ -177,11 +178,14 @@ function NavListMenu() {
     onMouseLeave: () => setIsMenuOpen(false),
   };
  
-  const renderItems = navListMenuItems.map(({ title, href }) => (
-    <a href={href} key={title}>
+  const renderItems = navListMenuItems.map(({ title, description }) => (
+    <a href="#" key={title}>
       <MenuItem>
-        <Typography variant="paragraph" color="blue-gray" className="mb-1 font-normal">
+        <Typography variant="h6" color="blue-gray" className="mb-1">
           {title}
+        </Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          {description}
         </Typography>
       </MenuItem>
     </a>
@@ -191,7 +195,7 @@ function NavListMenu() {
     <React.Fragment>
       <Menu open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal outline-none focus:outline-none">
+          <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem
               {...triggers}
               className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
@@ -208,9 +212,17 @@ function NavListMenu() {
         </MenuHandler>
         <MenuList
           {...triggers}
-          className="hidden grid-cols-7 gap-3 overflow-visible lg:grid"
+          className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <ul className="col-span-12 flex w-full flex-col gap-1 outline-none focus:outline-none">
+          <Card
+            color="blue"
+            shadow={false}
+            variant="gradient"
+            className="col-span-3 grid h-full w-full place-items-center rounded-md"
+          >
+            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+          </Card>
+          <ul className="col-span-4 flex w-full flex-col gap-1">
             {renderItems}
           </ul>
         </MenuList>
@@ -276,7 +288,7 @@ export default function ComplexNavbar() {
   }, []);
  
   return (
-    <Navbar className="sticky inset-0 z-10 mx-auto max-w-screen-3xl p-2 lg:rounded-lg lg:pl-6 mt-4">
+    <Navbar className="sticky inset-0 z-50 mx-auto max-w-screen-3xl p-2 lg:rounded-lg lg:pl-6 mt-4">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
         <Typography
           as="a"
@@ -299,9 +311,9 @@ export default function ComplexNavbar() {
         </IconButton>
         <ProfileMenu />
       </div>
-      <Collapse open={isNavOpen} className="overflow-scroll">
+      <MobileNav open={isNavOpen} className="overflow-scroll">
         <NavList />
-      </Collapse>
+      </MobileNav>
     </Navbar>
   );
 }

@@ -4,7 +4,7 @@ function StatsCard({ count, title, desc }) {
   return (
     <Card color="transparent" shadow={false}>
       <CardBody>
-        <Typography variant="h1" className="mb-4 text-6xl text-dark">
+        <Typography variant="h1" color="blue" className="mb-4 text-6xl">
           {count}
         </Typography>
         <Typography variant="h5" color="blue-gray" className="mb-2">
@@ -57,8 +57,7 @@ export function StatsSectionOne() {
           </div>
           <Typography
             variant="lead"
-            color="gray"
-            className="w-full lg:w-4/12"
+            className="w-full lg:w-4/12 text-blue-gray-800"
           >
             Learn more about the team behind the company.
           </Typography>

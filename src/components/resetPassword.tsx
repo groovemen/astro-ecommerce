@@ -20,30 +20,27 @@ export function Reset() {
             alt="background image"
             className="h-full w-full object-cover"
           />
-          <div className="absolute top-0 left-0 h-full w-full bg-dark/25" />
+          <div className="absolute top-0 left-0 h-full w-full bg-black/25" />
         </div>
         <div className="container mx-auto -mt-32 grid justify-center">
           <Card className="mx-4 md:w-[26rem]">
-            <CardHeader
-              variant="gradient"
-              color="dark"
-              className="mb-4 grid place-items-center py-8 px-4 text-center bg-dark"
-            >
-              <Typography variant="h3" color="white" className="mb-2">
+            <div className="py-8 px-4 text-center">
+              <Typography variant="h3" color="dark" className="mb-2">
                 Reset Password
               </Typography>
-              <Typography variant="small" color="white" className="font-normal">
+              <Typography variant="small" color="blue-gray" className="font-normal">
                 You will receive an e-mail in maximum 60 seconds
               </Typography>
-            </CardHeader>
+            </div>
             <CardBody className="flex flex-col gap-4">
               <Input
                 variant="static"
+                color="black"
                 label="Email"
                 size="lg"
                 placeholder="john@example.com"
               />
-              <Button color="dark" className="mt-4" fullWidth>
+              <Button className="mt-4" fullWidth>
                 Reset
               </Button>
             </CardBody>

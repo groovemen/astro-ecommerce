@@ -26,23 +26,20 @@ export function HeroSectionThree() {
       <Navbar />
       <header className="h-full min-h-screen w-screen bg-white pt-32">
         <div className="container mx-auto grid items-center text-center">
-          <div className="mb-8 inline-flex w-max mx-auto items-center rounded-lg border border-dark/30 py-1 pl-1 pr-3">
+          <div className="mx-auto mb-8 inline-flex w-max items-center rounded-full bg-blue-50 py-1 pl-1 pr-3">
             <Typography
               variant="small"
-              className="mr-3 rounded-md bg-dark py-0.5 px-3 font-medium text-white"
+              className="mr-3 rounded-full bg-white px-2.5 py-0.5 font-medium text-blue-500"
             >
               What&apos;s new?
             </Typography>
             <Typography
-              color="dark"
+              color="blue"
               variant="small"
               className="!flex !items-center !font-semibold"
             >
               Get a new virtual card
-              <ArrowSmallRightIcon
-                className="ml-1.5 h-4 w-4"
-                strokeWidth={3}
-              />
+              <ArrowSmallRightIcon className="ml-1.5 h-4 w-4" strokeWidth={3} />
             </Typography>
           </div>
           <Typography
@@ -54,8 +51,7 @@ export function HeroSectionThree() {
           </Typography>
           <Typography
             variant="lead"
-            color="gray"
-            className="mx-auto mb-12 w-full px-8 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20"
+            className="mx-auto text-blue-gray-800 mb-12 w-full px-8 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20"
           >
             People are so scared to lose that they don&apos;t even try. Like,
             one thing people can&apos;t say is that I&apos;m not trying, and

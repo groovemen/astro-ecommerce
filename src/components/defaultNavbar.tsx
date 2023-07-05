@@ -38,14 +38,6 @@ const colors = {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "404",
-    href: "/404"
-  },
-  {
-    title: "500",
-    href: "/500"
-  },
-  {
     title: "About Us",
     href: "/about"
   },
@@ -70,8 +62,8 @@ const navListMenuItems = [
     href: "/blog-post"
   },
   {
-    title: "Coming Soon",
-    href: "/coming-soon"
+    title: "Comming Soon",
+    href: "/comming-soon"
   },
   {
     title: "Dashboard",
@@ -93,6 +85,14 @@ const navListMenuItems = [
     title: "Terms",
     href: "/terms"
   },
+  {
+    title: "404",
+    href: "/404"
+  },
+  {
+    title: "500",
+    href: "/500"
+  }
 ];
  
 function NavListMenu() {
@@ -106,7 +106,7 @@ function NavListMenu() {
   const renderItems = navListMenuItems.map(({ title, href }) => (
     <a href={href} key={title}>
       <MenuItem>
-        <Typography variant="paragraph" color="blue-gray" className="mb-1 font-normal">
+        <Typography variant="p" color="blue-gray" className="mb-1 font-normal">
           {title}
         </Typography>
       </MenuItem>
@@ -117,7 +117,7 @@ function NavListMenu() {
     <React.Fragment>
       <Menu open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal outline-none focus:outline-none">
+          <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem
               {...triggers}
               className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
@@ -136,7 +136,7 @@ function NavListMenu() {
           {...triggers}
           className="hidden grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <ul className="col-span-12 flex w-full flex-col gap-1 outline-none focus:outline-none">
+          <ul className="col-span-12 flex w-full flex-col gap-1">
             {renderItems}
           </ul>
         </MenuList>
@@ -154,6 +154,7 @@ function NavListMenu() {
 function NavList() {
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+      <NavListMenu />
       <Typography
         as="a"
         href="#"
@@ -166,7 +167,6 @@ function NavList() {
           Blocks
         </ListItem>
       </Typography>
-      <NavListMenu />
       <Typography
         as="a"
         href="#"
@@ -203,7 +203,7 @@ export default function Example() {
             variant="h6"
             className="mr-4 cursor-pointer py-1.5 lg:ml-2"
           >
-            Astro Ecommerce
+            Astro Material React
           </Typography>
           <div className="hidden lg:block">
             <NavList />
@@ -237,7 +237,7 @@ export default function Example() {
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
             <a href="./login">
-              <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+              <Button variant="outlined" size="sm" color="dark" fullWidth>
                 Sign In
               </Button>
             </a>

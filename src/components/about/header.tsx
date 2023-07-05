@@ -6,8 +6,6 @@ import {
 import ThemeProvider from "../theme-provider";
 import Navbar from "../navbar";
 import {
-  Bars3Icon,
-  XMarkIcon,
   ArrowSmallRightIcon,
 } from "@heroicons/react/24/outline";
 
@@ -19,10 +17,10 @@ export function HeroSectionTwo() {
       <header className="h-full w-screen place-items-center bg-white px-8 py-28">
         <div className="container mx-auto grid items-center lg:grid-cols-2">
           <div className="text-center lg:text-left">
-            <div className="mb-8 inline-flex items-center rounded-lg border border-dark/30 py-1 pl-1 pr-3">
+            <div className="mb-8 inline-flex items-center rounded-full bg-dark/30 py-1 pl-1 pr-3">
               <Typography
                 variant="small"
-                className="mr-3 rounded-md bg-dark py-0.5 px-3 font-medium text-white"
+                className="mr-3 rounded-full bg-white py-0.5 px-3 font-medium text-dark-500"
               >
                 New
               </Typography>
@@ -45,7 +43,7 @@ export function HeroSectionTwo() {
             >
               Our company mission is to lead the design apps
             </Typography>
-            <Typography variant="lead" color="gray" className="lg:pr-20">
+            <Typography variant="lead" className="lg:pr-20 text-blue-gray-800">
               It becomes harder for us to give others a hand. We get our heart
               broken by people we love, even that we give them all we have. Then
               we lose family over time.
@@ -53,7 +51,7 @@ export function HeroSectionTwo() {
             <div className="mt-12 flex flex-wrap justify-center gap-3 lg:justify-start">
               <Button color="dark" className="flex items-center">
                 <img
-                  src=".//logos/logo-ios.svg"
+                  src="../../public/logos/logo-ios.svg"
                   alt="ios"
                   className="-mt-1 mr-1.5 h-6 w-6"
                 />
@@ -61,7 +59,7 @@ export function HeroSectionTwo() {
               </Button>
               <Button color="dark" className="flex items-center">
                 <img
-                  src=".//logos/logo-android.svg"
+                  src="../../public/logos/logo-android.svg"
                   alt="ios"
                   className="-mt-0.5 mr-1.5 h-6 w-6"
                 />

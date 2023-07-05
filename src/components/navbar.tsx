@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Navbar,
-  Collapse,
+  MobileNav,
   Typography,
   Button,
   Menu,
@@ -64,9 +64,9 @@ function ProfileMenu() {
           <Avatar
             variant="circular"
             size="sm"
-            alt="candice wu"
-            className="border border-blue-500 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            alt="Tania Andrew"
+            className="border border-gray-300 p-0.5"
+            src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=986&q=80"
           />
           <ChevronDownIcon
             strokeWidth={2.5}
@@ -112,14 +112,6 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "404",
-    href: "/404"
-  },
-  {
-    title: "500",
-    href: "/500"
-  },
-  {
     title: "About Us",
     href: "/about"
   },
@@ -144,8 +136,8 @@ const navListMenuItems = [
     href: "/blog-post"
   },
   {
-    title: "Coming Soon",
-    href: "/coming-soon"
+    title: "Comming Soon",
+    href: "/comming-soon"
   },
   {
     title: "Dashboard",
@@ -167,6 +159,14 @@ const navListMenuItems = [
     title: "Terms",
     href: "/terms"
   },
+  {
+    title: "404",
+    href: "/404"
+  },
+  {
+    title: "500",
+    href: "/500"
+  }
 ];
  
 function NavListMenu() {
@@ -180,7 +180,7 @@ function NavListMenu() {
   const renderItems = navListMenuItems.map(({ title, href }) => (
     <a href={href} key={title}>
       <MenuItem>
-        <Typography variant="paragraph" color="blue-gray" className="mb-1 font-normal">
+        <Typography variant="p" color="blue-gray" className="mb-1 font-normal">
           {title}
         </Typography>
       </MenuItem>
@@ -191,7 +191,7 @@ function NavListMenu() {
     <React.Fragment>
       <Menu open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal outline-none focus:outline-none">
+          <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem
               {...triggers}
               className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
@@ -210,7 +210,7 @@ function NavListMenu() {
           {...triggers}
           className="hidden grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <ul className="col-span-12 flex w-full flex-col gap-1 outline-none focus:outline-none">
+          <ul className="col-span-12 flex w-full flex-col gap-1">
             {renderItems}
           </ul>
         </MenuList>
@@ -266,8 +266,26 @@ function NavList() {
  
 export default function ComplexNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [shouldShowBorder, setShouldShowBorder] = React.useState(false);
+
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
  
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setShouldShowBorder(true);
+      } else {
+        setShouldShowBorder(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -276,14 +294,18 @@ export default function ComplexNavbar() {
   }, []);
  
   return (
-    <Navbar className="sticky inset-0 z-10 mx-auto max-w-screen-2xl p-2 lg:rounded-full lg:pl-6 mt-4">
+    <Navbar
+      className={`sticky inset-0 z-10 shadow-none mx-auto max-w-screen-2xl p-2 lg:pl-6 mt-4 ${
+        shouldShowBorder ? "border-b border-gray-300" : ""
+      }`}
+    >
       <div className="relative mx-auto flex items-center text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
         >
-          Astro Ecommerce
+          Astro Material React
         </Typography>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
@@ -299,9 +321,9 @@ export default function ComplexNavbar() {
         </IconButton>
         <ProfileMenu />
       </div>
-      <Collapse open={isNavOpen} className="overflow-scroll">
+      <MobileNav open={isNavOpen} className="overflow-scroll">
         <NavList />
-      </Collapse>
+      </MobileNav>
     </Navbar>
   );
 }

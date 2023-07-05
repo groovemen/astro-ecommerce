@@ -35,7 +35,7 @@ export function HeroSectionOne() {
   return (
     <ThemeProvider>
       <Navbar />
-      <header className="h-full min-h-screen w-screen bg-white px-4 pt-5">
+      <header className="h-full min-h-screen w-screen bg-white px-4 pt-24">
         <div className="container mx-auto flex flex-col-reverse items-center lg:flex-row">
           <div className="mr-0 lg:mr-16 xl:mr-24">
             <Typography
@@ -48,7 +48,7 @@ export function HeroSectionOne() {
             </Typography>
             <Typography
               variant="lead"
-              className="mb-6 text-gray-700 md:pr-16 xl:pr-28"
+              className="mb-6 text-blue-gray-800 md:pr-16 xl:pr-28"
             >
               The time is now for it to be okay to be great. People in this
               world shun people for being great.

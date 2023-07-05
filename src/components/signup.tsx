@@ -12,12 +12,12 @@ export function SignUp() {
           <Typography variant="h3" color="blue-gray" className="mb-2">
             Create an account
           </Typography>
-          <Typography color="gray" className="font-normal mb-12">
+          <Typography className="font-normal mb-12 text-blue-gray-800">
             Start your 30 days free trial.
           </Typography>
           <form action="#" className="mx-auto max-w-[24rem] text-left">
-            <Input size="lg" label="Email" type="email" name="email" />
-            <Button size="lg" className="mt-4" fullWidth>
+            <Input color="black" size="lg" label="Email" type="email" name="email" />
+            <Button color="dark" size="lg" className="mt-4" fullWidth>
               get started
             </Button>
             <div className="my-6 flex w-full items-center gap-2">
@@ -39,7 +39,7 @@ export function SignUp() {
               fullWidth
             >
               <img
-                src=".//logos/logo-google.png"
+                src="../../public/logos/logo-google.png"
                 alt="google"
                 className="h-6 w-6"
               />{" "}
@@ -53,7 +53,7 @@ export function SignUp() {
               fullWidth
             >
               <img
-                src=".//logos/logo-facebook.png"
+                src="/logos/logo-facebook.png"
                 alt="facebook"
                 className="-mt-0.5 h-7 w-7"
               />
@@ -80,7 +80,7 @@ export function SignUp() {
               Already have an account?{" "}
               <a
                 href="./login"
-                className="font-medium text-blue-500 transition-colors hover:text-blue-700"
+                className="font-medium text-dark transition-colors hover:text-blue-700"
               >
                 Log in
               </a>
