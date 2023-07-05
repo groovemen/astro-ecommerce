@@ -9,18 +9,18 @@ import {
   ArrowSmallRightIcon,
 } from "@heroicons/react/24/outline";
 
-export function HeroSectionTwo() {
+export function HeroPresentation() {
  
   return (
     <ThemeProvider>
       <Navbar />
-      <header className="h-full w-screen place-items-center bg-white px-8 py-28">
+      <header className="h-full w-screen place-items-center bg-white px-8 py-8 lg:mb-64">
         <div className="container mx-auto grid items-center lg:grid-cols-2">
-          <div className="text-center lg:text-left">
-            <div className="mb-8 inline-flex items-center rounded-full bg-dark/30 py-1 pl-1 pr-3">
+          <div className="text-center lg:text-left pt-32">
+            <div className="mb-8 inline-flex items-center rounded-lg border border-dark/30 py-1 pl-1 pr-3">
               <Typography
                 variant="small"
-                className="mr-3 rounded-full bg-white py-0.5 px-3 font-medium text-dark-500"
+                className="mr-3 rounded-md bg-dark py-0.5 px-3 font-medium text-white"
               >
                 New
               </Typography>
@@ -29,7 +29,7 @@ export function HeroSectionTwo() {
                 variant="small"
                 className="!flex !items-center !font-semibold"
               >
-                Personalized coaching in-app
+                Astro Starter Template
                 <ArrowSmallRightIcon
                   className="ml-1.5 h-4 w-4"
                   strokeWidth={3}
@@ -39,36 +39,29 @@ export function HeroSectionTwo() {
             <Typography
               variant="h1"
               color="blue-gray"
-              className="mb-8 leading-tight lg:text-6xl"
+              className="mb-8 leading-tight lg:text-5xl"
             >
-              Our company mission is to lead the design apps
+              The perfect starting point for your Astro Material React
             </Typography>
-            <Typography variant="lead" className="lg:pr-20 text-blue-gray-800">
-              It becomes harder for us to give others a hand. We get our heart
-              broken by people we love, even that we give them all we have. Then
-              we lose family over time.
+            <Typography variant="lead" color="gray" className="lg:pr-20">
+              Astro Material React is a free template designed to be both lightweight and feature-rich. It comes packed with everything you need to get your Online Store ready in no time.
             </Typography>
             <div className="mt-12 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <Button color="dark" className="flex items-center">
-                <img
-                  src="../../public/logos/logo-ios.svg"
-                  alt="ios"
-                  className="-mt-1 mr-1.5 h-6 w-6"
-                />
-                Download Ios
+              <Button color="dark" variant="outlined" className="flex items-center">
+                Get Started
               </Button>
               <Button color="dark" className="flex items-center">
                 <img
-                  src="../../public/logos/logo-android.svg"
+                  src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/figma-logo.png"
                   alt="ios"
                   className="-mt-0.5 mr-1.5 h-6 w-6"
                 />
-                Download Android
+                Get Figma
               </Button>
             </div>
           </div>
           <div className="hidden lg:flex">
-            <img src="https://images.unsplash.com/photo-1650615567023-0721bceeecb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80" alt="iphone" className="max-w-md rounded-3xl ml-auto" />
+            <img src="https://www.creative-tim.com/astro/assets/img/header-img.png" alt="iphone" className="absolute top-0 right-0" />
           </div>
         </div>
       </header>
@@ -76,4 +69,4 @@ export function HeroSectionTwo() {
   );
 }
 
-export default HeroSectionTwo;
+export default HeroPresentation;

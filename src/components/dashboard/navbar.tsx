@@ -66,8 +66,8 @@ function ProfileMenu() {
             variant="circular"
             size="sm"
             alt="candice wu"
-            className="border border-blue-500 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            className="border border-dark p-0.5"
+            src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=986&q=80"
           />
           <ChevronDownIcon
             strokeWidth={2.5}
@@ -113,19 +113,60 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "@material-tailwind/html",
-    description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+    title: "About Us",
+    href: "/about"
   },
   {
-    title: "@material-tailwind/react",
-    description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
+    title: "Landing Page",
+    href: "/landing"
   },
   {
-    title: "Material Tailwind PRO",
-    description:
-      "A complete set of UI Elements for building faster websites in less time.",
+    title: "Billing Page",
+    href: "/billing"
+  },
+  {
+    title: "Blog Page",
+    href: "/blog"
+  },
+  {
+    title: "Our Team",
+    href: "/teams"
+  },
+  {
+    title: "Blog Post",
+    href: "/blog-post"
+  },
+  {
+    title: "Coming Soon",
+    href: "/coming-soon"
+  },
+  {
+    title: "Dashboard",
+    href: "/dashboard"
+  },
+  {
+    title: "Login",
+    href: "/login"
+  },
+  {
+    title: "Reset",
+    href: "/reset"
+  },
+  {
+    title: "Sign Up",
+    href: "/signup"
+  },
+  {
+    title: "Terms",
+    href: "/terms"
+  },
+  {
+    title: "404",
+    href: "/404"
+  },
+  {
+    title: "500",
+    href: "/500"
   },
 ];
  
@@ -247,7 +288,7 @@ export default function ComplexNavbar() {
   }, []);
  
   return (
-    <Navbar className="w-full max-w-screen-3xl p-2 lg:pl-6">
+    <Navbar className="sticky inset-0 z-50 mx-auto max-w-screen-3xl p-2 lg:rounded-lg lg:pl-6 mt-4">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
         <Typography
           as="a"
